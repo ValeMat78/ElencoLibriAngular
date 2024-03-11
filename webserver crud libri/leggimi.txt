@@ -1,0 +1,10 @@
+eseguire il comando:
+
+./run_crud_libri.cmd
+
+
+per accedere al webserver crud:
+    http://localhost:9999/api/libri/
+    http://localhost:9999/api/libri/1
+
+sono disponibili i metodi:    get/delete/post

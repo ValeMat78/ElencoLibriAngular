@@ -1,0 +1,14 @@
+<h1 mat>Cerca libro</h1>
+<hr>
+<form [formGroup]="src" (ngSubmit)="search()">
+    <mat-form-field>
+        <mat-label>Id</mat-label>
+        <input matInput type="number" id="id" formControlName="id">
+    </mat-form-field>
+    <br>
+    <button type="submit" mat-raised-button color="primary" [disabled]="!src.valid">cerca</button><br>
+    <span *ngIf="!src.get('id').valid && src.get('id').touched"> id non valido </span>
+</form>
+
+<hr>
+<router-outlet></router-outlet>

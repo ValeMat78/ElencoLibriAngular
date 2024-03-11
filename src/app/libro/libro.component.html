@@ -1,0 +1,25 @@
+<h1>INFORMAZIONI SUL LIBRO: </h1>
+<hr>
+<div *ngIf="libro">
+    ID LIBRO: {{libro.id}}
+    <br>
+    TITOLO: {{libro.titolo}}
+    <br>
+    AUTORE: {{libro.autore}}
+    <br>
+    TIPOLOGIA: {{libro.tipo}}
+    <br>
+    <br>
+    <button mat-raised-button color="warn"
+        (click)="deleteLibro(libro.id)">
+        <!-- <mat-icon>delete</mat-icon> -->
+        elimina
+    </button>&nbsp;
+    <button mat-raised-button color="primary"
+        [routerLink]="['/modifica', libro.id]">
+        <!-- <mat-icon>edit</mat-icon> -->
+        modifica
+    </button>
+    <br><br>
+</div>
+<hr>

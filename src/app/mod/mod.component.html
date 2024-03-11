@@ -1,0 +1,32 @@
+<h1 mat>Inserimento libro</h1>
+
+<hr>
+<form [formGroup]="mod" (ngSubmit)="modifica()">
+    <mat-form-field>
+        <mat-label>id</mat-label>
+        <input matInput type="number" id="id" formControlName="id">
+    </mat-form-field>
+
+    <br>
+    <mat-form-field>
+        <mat-label>Titolo</mat-label>
+        <input matInput type="text" id="titolo" formControlName="titolo">
+    </mat-form-field>
+    
+    <br>
+    <mat-form-field>
+        <mat-label>Autore</mat-label>
+        <input matInput type="text" id="autore" formControlName="autore">
+    </mat-form-field>
+
+    <br>
+    <mat-form-field>
+        <mat-label>tipo</mat-label>
+        <input matInput type="text" id="tipo" formControlName="tipo">
+    </mat-form-field>
+    <br>
+    <div class="example-button-row">
+        <button type="submit" mat-raised-button color="primary" [disabled]="!mod.valid">modifica</button>
+        <button mat-raised-button [routerLink]="['/elenco']">annulla</button>
+    </div>  
+</form> 

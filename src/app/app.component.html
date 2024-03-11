@@ -1,0 +1,52 @@
+<!-- <input type="text" [(ngModel)]="idJson" placeholder="inserisci testo">
+<button (click)="getJsonById()">clicca</button> -->
+
+
+<!-- <div *ngFor="let j of json$ | async">
+{{j.userId}} - {{j.id}} - {{j.title}} - {{j.completed}}
+
+</div> -->
+
+<!-- <div *ngIf="visualizzaFormElenco; else not ">
+  <button (click)="cambiaVisualizzazione()" mat-raised-button color="primary">Aggiungi/Cerca Libro</button>
+  <app-mod [titolo]="titolo" [autore]="autore" [id]="id" [prezzo]="prezzo" (visible)="mostraModi($event)" *ngIf="mostraMod; else mostra"></app-mod>
+  <ng-template #mostra>
+    <app-elenco (modificaLibro)="modificaLibro($event)"></app-elenco>
+  </ng-template>
+</div>
+
+<ng-template #not>
+<button (click)="cambiaVisualizzazione()" mat-raised-button color="primary">Annulla</button>
+  <app-form (submitEvent)="inserisciLibro($event)"></app-form>
+</ng-template> -->
+<nav mat-tab-nav-bar [tabPanel]="tabPanel">
+  <a mat-tab-link 
+      routerLink="elenco" 
+      routerLinkActive 
+      #rla="routerLinkActive" 
+      [active]="rla.isActive"
+      [routerLinkActiveOptions]="{exact:true }">
+      elenco
+  </a>
+  <a mat-tab-link 
+      routerLink="form" 
+      routerLinkActive 
+      #rlb="routerLinkActive"
+      [active]="rlb.isActive"
+      [routerLinkActiveOptions]="{exact:true }">
+      form
+  </a>
+  <a mat-tab-link 
+      routerLink="ricerca" 
+      routerLinkActive 
+      #rlc="routerLinkActive"
+      [active]="rlc.isActive"
+      [routerLinkActiveOptions]="{exact:true }">
+      ricerca
+  </a>
+</nav>
+
+<mat-tab-nav-panel #tabPanel>
+  <!-- segnaposto dove verranno caricate le componenti -->
+  <router-outlet></router-outlet>
+</mat-tab-nav-panel>

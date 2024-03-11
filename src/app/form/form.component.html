@@ -1,0 +1,32 @@
+<h1 mat>Inserimento libro</h1>
+
+<hr>
+<form [formGroup]="add" (ngSubmit)="submit()">
+
+    <mat-form-field>
+        <mat-label>Titolo</mat-label>
+        <input matInput type="text" id="titolo" formControlName="titolo">
+    </mat-form-field>
+    
+    <br>
+    <mat-form-field>
+        <mat-label>Autore</mat-label>
+        <input matInput type="text" id="autore" formControlName="autore">
+    </mat-form-field>
+
+    <br>
+    <!-- da modificare questo input in angular matireals e i vari controlli -->
+    <mat-form-field>
+        <mat-label>tipo</mat-label>
+        <input matInput type="text" id="prezzo" formControlName="tipo">
+    </mat-form-field>
+
+    <br>
+
+    <button type="submit" mat-raised-button color="primary" [disabled]="!add.valid">Inserisci</button><br>
+    <!-- <span *ngIf="!add.get('titolo').valid && add.get('titolo').touched"> titolo non valido </span><br>
+    <span *ngIf="!add.get('autore').valid && add.get('autore').touched"> autore non valido </span><br>
+    <span *ngIf="!add.get('tipo').valid && add.get('tipo').touched"> tipo non valido </span><br> -->
+</form>
+
+<hr>
